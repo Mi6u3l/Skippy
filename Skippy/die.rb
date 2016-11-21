@@ -1,10 +1,12 @@
+require './grid'
+
 class Die
   #hashtable to store throws
   @throws
 
-  def initialize(directions)
-    #initializes directions
-    @directions = directions
+  def initialize(sides)
+    #initializes sides
+    @sides = sides
   end
 
   def get_throws
@@ -12,10 +14,10 @@ class Die
   end
 
   def roll
-    #gets random direction
-    throw = @directions.sample
+    #gets random side
+    throw = @sides.sample
     @throws ||= Hash.new
-    #checks if throw exists on hashtable
+    #checks if throw exists in hashtable
     if @throws.has_key? throw
       #increment
       @throws[throw] = Integer(@throws[throw]) + 1

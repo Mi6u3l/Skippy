@@ -1,8 +1,11 @@
-class Point
+require './grid'
 
-  def initialize(x, y)
+class Point < Grid
+
+  def initialize(x, y, initial_grid_size)
     @x_axis = x
     @y_axis = y
+    super(initial_grid_size)
   end
 
   def get_currentpoint
@@ -43,3 +46,5 @@ class Point
     return new_x, new_y
   end
 end
+
+
